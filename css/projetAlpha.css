@@ -1,0 +1,61 @@
+
+body {
+    margin: 0;
+}
+
+#mainTitle {
+    text-align: center;
+    margin: 0;
+
+}
+
+#intHeadContainer {
+    height: 56px;
+    width: auto;
+    background-color: darkslategrey;
+    margin: 0;
+    box-shadow: black;
+}
+
+#mainContainer{
+    height: 450px;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#leftSide {
+    background-color: blue;
+    height: inherit;
+    width: 49.65%;
+    float: left;
+    box-shadow: black;
+
+
+}
+
+#rightSide {
+    background-color: red;
+    height: inherit;
+    width: 49.65%;
+    float: right;
+    box-shadow: black;
+
+}
+
+#secondContainer {
+    height: 450px;
+    width: auto;
+    margin-right: 5px;
+    margin-left: 5px;
+
+
+}
+
+#secondBox {
+    background: pink;
+    height: inherit;
+    width: inherit;
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
