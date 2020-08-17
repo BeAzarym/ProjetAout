@@ -1,6 +1,7 @@
 
 body {
     margin: 0;
+    background-color: grey;
 }
 
 #mainTitle {
@@ -24,7 +25,7 @@ body {
     margin-right: 10px;
 }
 #leftSide {
-    background-color: blue;
+    background-color: lightgray;
     height: inherit;
     width: 49.65%;
     float: left;
@@ -34,7 +35,7 @@ body {
 }
 
 #rightSide {
-    background-color: red;
+    background-color: lightgray;
     height: inherit;
     width: 49.65%;
     float: right;
@@ -52,10 +53,15 @@ body {
 }
 
 #secondBox {
-    background: pink;
+    background: lightgray;
     height: inherit;
     width: inherit;
     margin-top: 15px;
     margin-right: 10px;
     margin-left: 10px;
 }
+
+#bookForms{
+    position: center;
+}
+

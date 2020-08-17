@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <script src="js/script.js"></script>
     <link REL="stylesheet" href="css/projetAlpha.css">
@@ -10,14 +10,43 @@
 </head>
 <header>
     <div id="intHeadContainer">
-        <h1 id="mainTitle">Titre</h1>
+        <h1 id="mainTitle">Bibliothèque</h1>
     </div>
 </header>
 
 <body>
 <div id="mainContainer">
     <section id="leftSide">
+        <forms id="bookForms">
+            <!-- Nom du Livre-->
+            <label for="bookName">Nom du livre:</label><br>
+            <input id="bookName" name="bookName" type="text"><br>
+            <!-- Auteur -->
+            <label for="bookAuthor">Auteur:</label><br>
+            <input id="bookAuthor" name="bookAuthor" type="text"><br>
+            <!-- Prix -->
+            <label for="bookPrice">Prix:</label><br>
+            <input id="bookPrice" name="bookPrice" type="number"><br>
+            <!-- Année de parution -->
+            <label for="bookYear">Année de parution:</label><br>
+            <input id="bookYear" name="bookYear" type="number"><br>
+            <!-- Genre -->
+            <label for=bookStyle">Genre:</label>
+            <select id="bookStyle" name="bookStyle">
+                <option valeur="Romanicer">Romancier</option>
+                <option valeur="Policier">Policier</option>
+                <option valeur="Nouvelles">Nouvelles</option>
+                <option valeur="Biographie">Biographie</option>
+                <option valeur="Aventures">Aventures</option>
+                <option value="SF">SF</option>
+                <option value="Horreur">Horreur</option>
+                <option value="Encyclopédie">Encyclopédie</option>
+        </select><br>
+            <!-- Submit -->
+            <input id="submit" type="submit"  onclick="sauvegardeDonne()">
 
+
+        </forms>
     </section>
     <section id="rightSide">
 
