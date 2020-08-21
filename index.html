@@ -17,19 +17,20 @@
 <body onload="init()">
 <div id="mainContainer">
     <section id="leftSide">
-        <form  action="#" id="bookForm">
+        <h2>Formulaire Enregistrement</h2>
+        <form  action="#" id="bookForm" >
             <!-- Nom du Livre-->
             <label for="bookName">Nom du livre:</label><br>
-            <input id="bookName" name="bookName" type="text"><br>
+            <input id="bookName" name="bookName" type="text" required><br>
             <!-- Auteur -->
             <label for="bookAuthor">Auteur:</label><br>
-            <input id="bookAuthor" name="bookAuthor" type="text"><br>
+            <input id="bookAuthor" name="bookAuthor" type="text" required><br>
             <!-- Prix -->
             <label for="bookPrice">Prix:</label><br>
-            <input id="bookPrice" name="bookPrice" type="number" step="0.01" min="0" max="1000"><br>
+            <input id="bookPrice" name="bookPrice" type="number" step="0.01" min="0" max="1000" required><br>
             <!-- Année de parution -->
             <label for="bookYear">Année de parution:</label><br>
-            <input id="bookYear" name="bookYear" type="number"><br>
+            <input id="bookYear" name="bookYear" type="number" required><br>
             <!-- Genre -->
             <label for="bookStyle">Genre:</label>
             <select id="bookStyle" name="bookStyle">
@@ -43,18 +44,27 @@
                 <option value="Encyclopédie">Encyclopédie</option>
         </select><br>
             <!-- Submit -->
-            <input id="submit" type="submit"  onclick="sauvegardeDonne()">
-            <button onclick="test()">Click Here</button>
+            <input id="submit" type="submit"  onclick="sauvegardeDonne(); return false">
+            <button onclick="test();return false">Test Me</button>
 
         </form>
     </section>
     <section id="rightSide">
-
+        <h2>Mes livres</h2>
+        <form action="#" id="myBook" >
+            <label for="myBookName">Nom:</label>
+            <input type="text" id="myBookName" name="myBookName" required><br>
+            <input type="submit" value="Emprunter" onclick="emprunter(); return false">
+            <button onclick="rendre();">Rendre</button>
+        </form><br>
+        <p id="pocheLivre"></p>
     </section>
 </div>
 
 <div id="secondContainer">
     <section id="secondBox">
+        <h2>Collection de livres</h2>
+        <p id="collectionLivre"></p>
     </section>
 </div>
 

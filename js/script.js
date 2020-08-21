@@ -1,28 +1,12 @@
 // Projet Août
 "use strict";
-
-
-/*
--Function traitement de données
-  @Nom - String
-  @Auteur - String
-  @Prix - Number
-  @Année - Number
-    range max date actuel
-  @Genre - string
-    Si vide -> "Autre"
-
-Recuperer donnée -> Vérification conditions d'existance + présence* -> Push -> actualisation
-*Si déja présent -> Erreur
-
-
-Fonction gestion "prêt"
-*/
-let Bibliotheque = [{bookName: "Les 4 accords de Toltèques", bookAuthor: "Miguel Ruiz", bookPrice: "49,55", bookYear: "1985", bookStyle: "Encyclopédie"},
-                    {bookName: "Cherub", bookAuthor: "Robert Muchamore", bookPrice: "29,99", bookYear: "2016", bookStyle: "Aventures"}];
+let poche = [{bookName: "Replay", bookAuthor: "Ken Grimwood", bookPrice: "7.99", bookYear: "1997", bookStyle: "Aventures", bookStatus: false }];
+let bibliotheque = [{bookName: "Les 4 accords de Toltèques", bookAuthor: "Miguel Ruiz", bookPrice: "49,55", bookYear: "1985", bookStyle: "Encyclopédie",bookStatus: true},
+                    {bookName: "Cherub", bookAuthor: "Robert Muchamore", bookPrice: "29,99", bookYear: "2016", bookStyle: "Aventures", bookStatus: true},
+                    {bookName: "Replay", bookAuthor: "Ken Grimwood", bookPrice: "7.99", bookYear: "1997", bookStyle: "Aventures", bookStatus: false }];
 function init() {
-    document.getElementById("secondBox").innerHTML += genererTable(Bibliotheque);
-
+    document.getElementById("collectionLivre").innerHTML += genererTable(bibliotheque);
+    document.getElementById("pocheLivre").innerHTML += genererTable(poche);
 }
 function sauvegardeDonne () {
     let bookName = document.getElementById("bookName").value;
@@ -30,27 +14,57 @@ function sauvegardeDonne () {
     let bookPrice = document.getElementById("bookPrice").value;
     let bookYear = document.getElementById("bookYear").value;
     let bookStyle = document.getElementById("bookStyle").value;
+    let bookStatus = true;
 
-    function book(bookName, bookAuthor, bookPrice, bookYear, bookStyle) {
+    function book(bookName, bookAuthor, bookPrice, bookYear, bookStyle, bookStatus) {
         this.bookName = bookName;
         this.bookAuthor = bookAuthor;
         this.bookPrice = bookPrice;
         this.bookYear = bookYear;
         this.bookStyle = bookStyle;
+        this.bookStatus = bookStatus
     }
 
-    let bookCreator = new book (bookName, bookAuthor, bookPrice, bookYear, bookStyle);
+    let bookCreator = new book (bookName, bookAuthor, bookPrice, bookYear, bookStyle, bookStatus);
     console.log(checkData(bookCreator));
     if(! checkData(bookCreator)){
-        Bibliotheque.push(bookCreator);
-        console.log(Bibliotheque);
-        document.getElementById("secondBox").innerHTML = genererTable(Bibliotheque);
+        bibliotheque.push(bookCreator);
+        console.log(bibliotheque);
+        document.getElementById("collectionLivre").innerHTML = genererTable(bibliotheque);
     } else {alert("Le livre " + bookCreator.bookName + " est déja présent dans la bibliothèque.");}
+}
+
+function emprunter(){
+    let name = document.getElementById("myBookName").value;
+    for (let i = 0;i < bibliotheque.length;i++){
+        if(bibliotheque[i].bookName === name){
+           bibliotheque[i].bookStatus = false;
+           let livre = bibliotheque[i];
+           poche.push(livre);
+            document.getElementById("collectionLivre").innerHTML = genererTable(bibliotheque);
+            document.getElementById("pocheLivre").innerHTML = genererTable(poche);
+        }
+    }
+}
+
+function rendre() {
+    let name = document.getElementById("myBookName").value;
+    for (let i = 0;i < poche.length;i++){
+        if(poche[i].bookName === name){
+            poche[i] = {};
+        }
+        if(bibliotheque[i].bookName === name){
+            bibliotheque[i].bookStatus = true;
+            document.getElementById("collectionLivre").innerHTML = genererTable(bibliotheque);
+            document.getElementById("pocheLivre").innerHTML = genererTable(poche);
+    }
+
+    }
 }
 
 
 function checkData(newBook) {
-    let t = Bibliotheque.filter(function (x) {
+    let t = bibliotheque.filter(function (x) {
             return (x.bookName === newBook.bookName);});
     return t.length !== 0;
 }

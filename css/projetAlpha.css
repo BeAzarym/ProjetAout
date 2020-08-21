@@ -43,6 +43,7 @@ body {
     float: right;
     box-shadow: black;
 
+
 }
 
 #secondContainer {
@@ -58,10 +59,13 @@ body {
     background: lightgray;
     height: inherit;
     width: inherit;
-    margin-top: 15px;
     margin-right: 10px;
     margin-left: 10px;
+
 }
 
-
+h2{
+    padding-top: 5px;
+    text-decoration: underline overline solid grey;
+}
 
