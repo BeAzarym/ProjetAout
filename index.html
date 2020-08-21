@@ -14,10 +14,10 @@
     </div>
 </header>
 
-<body>
+<body onload="init()">
 <div id="mainContainer">
     <section id="leftSide">
-        <forms id="bookForms">
+        <form  action="#" id="bookForm">
             <!-- Nom du Livre-->
             <label for="bookName">Nom du livre:</label><br>
             <input id="bookName" name="bookName" type="text"><br>
@@ -26,12 +26,12 @@
             <input id="bookAuthor" name="bookAuthor" type="text"><br>
             <!-- Prix -->
             <label for="bookPrice">Prix:</label><br>
-            <input id="bookPrice" name="bookPrice" type="number"><br>
+            <input id="bookPrice" name="bookPrice" type="number" step="0.01" min="0" max="1000"><br>
             <!-- Année de parution -->
             <label for="bookYear">Année de parution:</label><br>
             <input id="bookYear" name="bookYear" type="number"><br>
             <!-- Genre -->
-            <label for=bookStyle">Genre:</label>
+            <label for="bookStyle">Genre:</label>
             <select id="bookStyle" name="bookStyle">
                 <option valeur="Romanicer">Romancier</option>
                 <option valeur="Policier">Policier</option>
@@ -44,9 +44,9 @@
         </select><br>
             <!-- Submit -->
             <input id="submit" type="submit"  onclick="sauvegardeDonne()">
+            <button onclick="test()">Click Here</button>
 
-
-        </forms>
+        </form>
     </section>
     <section id="rightSide">
 
@@ -55,9 +55,9 @@
 
 <div id="secondContainer">
     <section id="secondBox">
-
     </section>
 </div>
+
 
 
 <footer>
