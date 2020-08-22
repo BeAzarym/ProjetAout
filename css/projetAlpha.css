@@ -1,85 +1,96 @@
 
 body {
     margin: 0;
-    background-color: grey;
+    background-color: blanchedalmond;
     text-align: center;
+    font-family: Calibri, sans-serif;
 }
 
 #mainTitle {
     text-align: center;
     margin: 0;
-
+    color: blanchedalmond;
 }
 
 #intHeadContainer {
-    height: 56px;
+    height: 65px;
     width: auto;
-    background-color: darkslategrey;
+    background-color: #383e42;
     margin: 0;
-    box-shadow: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#mainContainer{
-    height: 450px;
+#mainContainer {
+    height: 325px;
     margin-top: 15px;
     margin-left: 10px;
     margin-right: 10px;
 }
+
 #leftSide {
-    background-color: lightgray;
+    background-color: cornsilk;
     height: inherit;
     width: 49.65%;
     float: left;
-    box-shadow: black;
-
-
-
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #rightSide {
-    background-color: lightgray;
+    background-color: cornsilk;
     height: inherit;
     width: 49.65%;
     float: right;
-    box-shadow: black;
-
-
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #secondContainer {
-    height: 450px;
+    height: auto;
     width: auto;
     margin-right: 5px;
     margin-left: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #secondBox {
-    background: lightgray;
+    background: cornsilk;
     height: inherit;
     width: inherit;
     margin-right: 10px;
     margin-left: 10px;
-
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-h2{
+h2 {
     padding-top: 5px;
     text-decoration: underline overline solid grey;
 }
 
-#livreImg{
+#livreImg {
     height: 200px;
     width: 200px;
     position: center;
     margin-top: 10px;
 }
 
-#github{
-    float: inside;
-    margin: 0;
+#github {
     text-decoration: none;
-    text-align: center;
-    color: black;
+    color: blanchedalmond;
     font-size: large;
+    outline: none;
+    padding: 2px 2px 0;
+}
 
+th {
+    background-color: cornsilk;
+}
+
+tr, td {
+    border-bottom: 1px solid black;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 50px 0;
+    margin-left: auto;
+    margin-right: auto;
 }

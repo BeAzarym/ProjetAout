@@ -11,15 +11,16 @@
 <header>
     <div id="intHeadContainer">
         <h1 id="mainTitle">Bibliothèque</h1>
-        <a href="https://github.com/BeAzarym/ProjetAout" name="Github"  target="_blank" id="github">Github</a>
+        <a href="https://github.com/BeAzarym/ProjetAout" target="_blank" id="github">Github</a>
     </div>
+
 </header>
 
 <body onload="init()">
 <div id="mainContainer">
     <section id="leftSide">
         <h2>Formulaire Enregistrement</h2>
-        <form  action="#" id="bookForm" >
+        <form action="#" id="bookForm">
             <!-- Nom du Livre-->
             <label for="bookName">Nom du livre:</label><br>
             <input id="bookName" name="bookName" type="text" required><br>
@@ -35,46 +36,43 @@
             <!-- Genre -->
             <label for="bookStyle">Genre:</label>
             <select id="bookStyle" name="bookStyle">
-                <option valeur="Romanicer">Romancier</option>
-                <option valeur="Policier">Policier</option>
-                <option valeur="Nouvelles">Nouvelles</option>
-                <option valeur="Biographie">Biographie</option>
-                <option valeur="Aventures">Aventures</option>
+                <option value="Romanicer">Romancier</option>
+                <option value="Policier">Policier</option>
+                <option value="Nouvelles">Nouvelles</option>
+                <option value="Biographie">Biographie</option>
+                <option value="Aventures">Aventures</option>
                 <option value="SF">SF</option>
                 <option value="Horreur">Horreur</option>
                 <option value="Encyclopédie">Encyclopédie</option>
-        </select><br>
+            </select><br>
             <!-- Submit -->
-            <input id="submit" type="submit"  onclick="sauvegardeDonne(); return false">
+            <input id="submit" type="submit" onclick="sauvegardeDonne(); return false">
             <button onclick="test();return false">Test Me</button>
 
         </form>
     </section>
     <section id="rightSide">
         <h2>Mes livres</h2>
-        <form action="#" id="myBook" >
+        <form action="#" id="myBook">
             <label for="myBookName">Nom:</label>
             <input type="text" id="myBookName" name="myBookName" required><br>
             <input type="submit" value="Emprunter" onclick="emprunter(); return false">
-            <button onclick="rendre();">Rendre</button>
-        </form><br>
+            <button onclick="rendre();return false;">Rendre</button>
+        </form>
+        <br>
         <p id="pocheLivre"></p><br>
         <p id="pocheValeur"></p>
     </section>
 </div>
 
-<div id="secondContainer" >
-    <img  id="livreImg" src="img/livre.png" alt="livre">
-    <section id="secondBox">
+<div id="secondContainer">
+    <img id="livreImg" src="img/livre.png" alt="livre">
+    <section id="secondBox" style="overflow-x:auto;">
         <h2>Collection de livres</h2>
         <p id="collectionLivre"></p>
     </section>
 </div>
-
-
-
 <footer>
-
 </footer>
 </body>
 </html>
