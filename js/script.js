@@ -8,7 +8,8 @@ let bibliotheque = [{
     Prix: 49.55,
     Annee: "1985",
     Genre: "Encyclopédie",
-    Statut: true},
+    Statut: true
+},
     {Nom: "Cherub", Auteur: "Robert Muchamore", Prix: 29.99, Annee: "2016", Genre: "Aventures", Statut: true},
     {Nom: "Replay", Auteur: "Ken Grimwood", Prix: 7.99, Annee: "1997", Genre: "Aventures", Statut: false}];
 
@@ -17,6 +18,21 @@ function init() {
     document.getElementById("pocheLivre").innerHTML = genererTable(poche);
     sommeLivre(poche);
 }
+/**
+ * Crée un objet contenant les informations du livre
+ *
+ * @constructor
+ * @this book
+ * @param bookName Nom du livre.
+ * @param bookAuthor Auteur du livre.
+ * @param bookPrice Prix du livre.
+ * @param bookYear Année de parution du livre.
+ * @param bookStyle Genre du livre.
+ * @param bookStatus Statut du livre, true par défault.
+ *
+ * Si le livre n'est pas dans la bibliothèque et l'ajoute dans celle-ci
+ *
+ */
 
 function sauvegardeDonne() {
     let bookName = document.getElementById("bookName").value;
@@ -46,8 +62,22 @@ function sauvegardeDonne() {
     }
 }
 
-function emprunter() {
-    let name = document.getElementById("myBookName").value;
+function checkData(newBook) {
+    let t = bibliotheque.filter(function (x) {
+        return (x.Nom === newBook.Nom);
+    });
+    return t.length !== 0;
+}
+
+/**
+ * Gère l'emprunt d'un livre
+ *
+ *@param name  Nom du livre
+ * Vérifie si le livre est présent dans la bibliothèque, si il y est change son statut en false
+ * Le livre est ajouter dans votre poche
+ */
+function emprunter(name) {
+    name = document.getElementById("myBookName").value;
     for (let i = 0; i < bibliotheque.length; i++) {
         if (bibliotheque[i].Nom === name) {
             bibliotheque[i].Statut = false;
@@ -64,7 +94,7 @@ function rendre() {
     let name = document.getElementById("myBookName").value;
     for (let i = 0; i < poche.length; i++) {
         if (poche[i].Nom === name) {
-            poche.splice(i,1);
+            poche.splice(i, 1);
         }
     }
     for (let i = 0; i < bibliotheque.length; i++) {
@@ -76,13 +106,15 @@ function rendre() {
     }
 }
 
-function checkData(newBook) {
-    let t = bibliotheque.filter(function (x) {
-        return (x.Nom === newBook.Nom);
-    });
-    return t.length !== 0;
-}
 
+/**
+ * Additionne le prix de tout les livres afin d'en afficher la somme
+ *
+ *@param tableau  Tableau de donnée
+ * Si la longueur du tableau est égal a 0 @return 0
+ * Si celui-ci est différent,parcour le tableau et additionne le prix de tout les livre.
+ *
+ */
 function sommeLivre(tableau) {
     if (tableau.length === 0) return "0";
     let resultat = 0;
