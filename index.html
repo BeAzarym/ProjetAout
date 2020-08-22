@@ -11,6 +11,7 @@
 <header>
     <div id="intHeadContainer">
         <h1 id="mainTitle">Bibliothèque</h1>
+        <a href="https://github.com/BeAzarym/ProjetAout" name="Github"  target="_blank" id="github">Github</a>
     </div>
 </header>
 
@@ -57,11 +58,13 @@
             <input type="submit" value="Emprunter" onclick="emprunter(); return false">
             <button onclick="rendre();">Rendre</button>
         </form><br>
-        <p id="pocheLivre"></p>
+        <p id="pocheLivre"></p><br>
+        <p id="pocheValeur"></p>
     </section>
 </div>
 
-<div id="secondContainer">
+<div id="secondContainer" >
+    <img  id="livreImg" src="img/livre.png" alt="livre">
     <section id="secondBox">
         <h2>Collection de livres</h2>
         <p id="collectionLivre"></p>

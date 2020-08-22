@@ -51,8 +51,6 @@ body {
     width: auto;
     margin-right: 5px;
     margin-left: 5px;
-
-
 }
 
 #secondBox {
@@ -69,3 +67,19 @@ h2{
     text-decoration: underline overline solid grey;
 }
 
+#livreImg{
+    height: 200px;
+    width: 200px;
+    position: center;
+    margin-top: 10px;
+}
+
+#github{
+    float: inside;
+    margin: 0;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-size: large;
+
+}
