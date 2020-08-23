@@ -2,21 +2,21 @@
 // Calvin Chabeau | HE201842
 "use strict";
 
-let poche = [{Nom: "Replay", Auteur: "Ken Grimwood", Prix: 7.99, Annee: "1997", Genre: "Aventures", Statut: false}];
+let poche = [{Nom: "Replay", Auteur: "Ken Grimwood", Prix: 7.99, Annee: "1997", Genre: "Aventures", Statut: "Indisponible"}];
 let bibliotheque = [{
     Nom: "Les 4 accords de Toltèques",
     Auteur: "Miguel Ruiz",
     Prix: 49.55,
     Annee: "1985",
     Genre: "Encyclopédie",
-    Statut: true
+    Statut: "Disponible"
 },
-    {Nom: "Cherub", Auteur: "Robert Muchamore", Prix: 29.99, Annee: "2016", Genre: "Aventures", Statut: true},
-    {Nom: "Encyclopédie du Mouvement wallon", Auteur: "Micheline Libon", Prix: 20.69, Annee: "2010",Genre:"Encyclopédie", Statut: true},
-    {Nom: "Perma-culture, tome 1", Auteur: "Bill Mollinson", Prix: 21.50, Annee: "2006", Genre:"Encyclopédie", Statut: true},
-    {Nom: "Iliade", Auteur: "Homère", Prix: 9.10, Annee: "2012", Genre:"Roman", Statut: true},
-    {Nom: "Replay", Auteur: "Ken Grimwood", Prix: 7.99, Annee: "1997", Genre: "Aventures", Statut: false},
-    {Nom: "La cité des chimères", Auteur: "Vania I. Prates", Prix: 18, Annee: "2019", Genre: "Fantasy", Statut: true}];
+    {Nom: "Cherub", Auteur: "Robert Muchamore", Prix: 29.99, Annee: "2016", Genre: "Aventures", Statut: "Disponible"},
+    {Nom: "Encyclopédie du Mouvement wallon", Auteur: "Micheline Libon", Prix: 20.69, Annee: "2010",Genre:"Encyclopédie", Statut: "Disponible"},
+    {Nom: "Perma-culture, tome 1", Auteur: "Bill Mollinson", Prix: 21.50, Annee: "2006", Genre:"Encyclopédie", Statut: "Disponible"},
+    {Nom: "Iliade", Auteur: "Homère", Prix: 9.10, Annee: "2012", Genre:"Roman", Statut: "Disponible"},
+    {Nom: "Replay", Auteur: "Ken Grimwood", Prix: 7.99, Annee: "1997", Genre: "Aventures", Statut: "Indisponible"},
+    {Nom: "La cité des chimères", Auteur: "Vania I. Prates", Prix: 18, Annee: "2019", Genre: "Fantasy", Statut: "Disponible"}];
 
 function init() {
     document.getElementById("collectionLivre").innerHTML = genererTable(bibliotheque);
@@ -33,7 +33,7 @@ function init() {
  * @param bookPrice Prix du livre.
  * @param bookYear Année de parution du livre.
  * @param bookStyle Genre du livre.
- * @param bookStatus Statut du livre, true par défault.
+ * @param bookStatus Statut du livre, "Disponible" par défault.
  *
  * Si le livre n'est pas dans la bibliothèque et l'ajoute dans celle-ci
  *
@@ -85,7 +85,7 @@ function emprunter(name) {
     name = document.getElementById("myBookName").value;
     for (let i = 0; i < bibliotheque.length; i++) {
         if (bibliotheque[i].Nom === name) {
-            bibliotheque[i].Statut = false;
+            bibliotheque[i].Statut = "Indisponible";
             let livre = bibliotheque[i];
             poche.push(livre);
             document.getElementById("collectionLivre").innerHTML = genererTable(bibliotheque);
@@ -104,7 +104,7 @@ function rendre() {
     }
     for (let i = 0; i < bibliotheque.length; i++) {
         if (bibliotheque[i].Nom === name) {
-            bibliotheque[i].Statut = true;
+            bibliotheque[i].Statut = "Disponible";
             init();
 
         }
