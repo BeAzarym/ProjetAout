@@ -88,15 +88,13 @@ function emprunter(name) {
             bibliotheque[i].Statut = "Indisponible";
             let livre = bibliotheque[i];
             poche.push(livre);
-            document.getElementById("collectionLivre").innerHTML = genererTable(bibliotheque);
-            document.getElementById("pocheLivre").innerHTML = genererTable(poche);
-            sommeLivre(poche);
+            init();
         }
     }
 }
 
-function rendre() {
-    let name = document.getElementById("myBookName").value;
+function rendre(name) {
+    name = document.getElementById("myBookName").value;
     for (let i = 0; i < poche.length; i++) {
         if (poche[i].Nom === name) {
             poche.splice(i, 1);
