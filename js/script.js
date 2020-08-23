@@ -45,7 +45,7 @@ function sauvegardeDonne() {
     let bookPrice = document.getElementById("bookPrice").value;
     let bookYear = document.getElementById("bookYear").value;
     let bookStyle = document.getElementById("bookStyle").value;
-    let bookStatus = true;
+    let bookStatus = "Disponible";
 
     function book(bookName, bookAuthor, bookPrice, bookYear, bookStyle, bookStatus) {
         this.Nom = bookName;
